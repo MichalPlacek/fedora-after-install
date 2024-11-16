@@ -25,17 +25,12 @@ dnf -y install dnf-plugins-core
 brave_status=$?
 if [ $brave_status -eq 0 ]
 then
-  dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
+  dnf config-manager addrepo --id=brave-browser --set=name='Brave Browser' --set=baseurl='https://brave-browser-rpm-release.s3.brave.com/$basearch'
   brave_status=$?
   if [ $brave_status -eq 0 ]
   then
-    rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+    dnf -y install brave-browser
     brave_status=$?
-    if [ $brave_status -eq 0 ]
-    then
-       dnf -y install brave-browser
-       brave_status=$?
-    fi
   fi
 fi
 
