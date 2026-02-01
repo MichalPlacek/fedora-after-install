@@ -77,6 +77,11 @@ echo "========== Step: git =================="
 dnf -y install git
 git_status=$?
 
+# Install kitty
+echo "========== Step: kitty =================="
+dnf -y install kitty
+kitty_status=$?
+
 echo ""
 echo ""
 echo "========== Summary =================="
@@ -86,3 +91,4 @@ print_result "Mc" $mc_status
 print_result "Rpm fusion" $fusion_status
 print_result "Video codecs" $codecs_status
 print_result "Git" $git_status
+print_result "Kitty" $kitty_status
