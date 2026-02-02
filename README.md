@@ -1,9 +1,5 @@
 # fedora-after-install
 
-## Claude Code Installation
+Scripts and configurations for setting up Fedora after fresh install.
 
-For full setup instructions, visit: https://code.claude.com/docs/en/setup
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
+See [setup-guide.md](setup-guide.md) for manual setup steps.
