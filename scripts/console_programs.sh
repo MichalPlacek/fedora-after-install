@@ -23,8 +23,14 @@ echo "========== Step: htop =================="
 dnf -y install htop
 htop_status=$?
 
+# Install zsh
+echo "========== Step: zsh =================="
+dnf -y install zsh
+zsh_status=$?
+
 echo ""
 echo ""
 echo "========== Summary =================="
 print_result "Kitty" $kitty_status
 print_result "Htop" $htop_status
+print_result "Zsh" $zsh_status
