@@ -19,22 +19,6 @@ dnf -y install neovim
 neovim_status=$?
 
 
-# Install brave
-echo "========== Step: brave =================="
-dnf -y install dnf-plugins-core
-brave_status=$?
-if [ $brave_status -eq 0 ]
-then
-  dnf config-manager addrepo --id=brave-browser --set=name='Brave Browser' --set=baseurl='https://brave-browser-rpm-release.s3.brave.com/$basearch'
-  brave_status=$?
-  if [ $brave_status -eq 0 ]
-  then
-    dnf -y install brave-browser
-    brave_status=$?
-  fi
-fi
-
-
 # Install mc
 echo "========== Step: mc =================="
 dnf -y install mc
@@ -81,7 +65,6 @@ echo ""
 echo ""
 echo "========== Summary =================="
 print_result "Neovim" $neovim_status
-print_result "Brave" $brave_status
 print_result "Mc" $mc_status
 print_result "Rpm fusion" $fusion_status
 print_result "Video codecs" $codecs_status
